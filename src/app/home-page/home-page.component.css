@@ -1,0 +1,10 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(rgba(39, 38, 38, 0.5), rgba(34, 31, 31, 0.5)), url("../../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

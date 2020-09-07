@@ -1,0 +1,28 @@
+<!-- <div class="posts" *ngFor="let post of posts">
+  <h2>{{post.title}}</h2>
+  <p>{{post.content}}</p>
+  <p>{{post.image}}</p>
+</div> -->
+<div class="posts-container">
+  <mat-card class="example-card" *ngFor="let post of posts" id="view-posts">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="post.imagePath" alt="post.title" />
+    <mat-card-content>
+      <p>
+        {{ post.content }}
+      </p>
+    </mat-card-content>
+    <div class="buttons-container">
+      <!-- <a id="edit-post" [routerLink]="['/edit', post.id]">Edit</a>
+      <a
+        id="delete-post"
+        routerLink=""
+        routerLinkActive="active"
+        (click)="onDelete(post.id); refreshPage()"
+        >Delete</a
+      > -->
+    </div>
+  </mat-card>
+</div>

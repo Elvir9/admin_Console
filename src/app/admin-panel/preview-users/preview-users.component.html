@@ -1,0 +1,53 @@
+<div id="wrapper">
+  <nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+      <ul class="nav" id="main-menu">
+        <li>
+          <a routerLink="../" routerLinkActive="active"><i class="fa fa-desktop"></i>Dashboard</a>
+        </li>
+
+        <li class="active-link">
+          <a routerLink="preview-users" routerLinkActive="active"><i class="fa fa-table"></i>Preview User</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /. NAV SIDE  -->
+  <div id="page-wrapper">
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>PreviewUsers</h2>
+        </div>
+      </div>
+      <!-- /. ROW  -->
+      <hr />
+      <div class="posts-container">
+        <mat-card class="example-card" *ngFor="let post of posts" id="view-posts">
+          <mat-card-header>
+            <mat-card-title>{{ post.title }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="post.imagePath" alt="post.title" />
+          <mat-card-content>
+            <p>
+              {{ post.content }}
+            </p>
+          </mat-card-content>
+          <div class="buttons-container">
+            <a id="edit-post" [routerLink]="['/edit', post.id]">Edit</a>
+            <a id="delete-post" routerLink="./" routerLinkActive="active"
+              (click)="onDelete(post.id); refreshPage()">Delete</a>
+          </div>
+        </mat-card>
+      </div>
+
+      <div class="content">
+        <div class="container">
+          <!-- <div class="row"> -->
+        </div>
+      </div>
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+</div>

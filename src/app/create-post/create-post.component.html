@@ -1,0 +1,61 @@
+<div class="pozadina">
+  <!-- <mat-toolbar>
+    <h1>Check Posts</h1>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>facebook</mat-icon>
+    </button>
+    <button class="toolbar-button">View posts</button>
+  </mat-toolbar> -->
+  <mat-toolbar>
+    <h1>Check Posts</h1>
+    <span class="example-spacer"></span>
+    <div class="icons">
+      <div class="facebook">
+        <a href="https://www.facebook.com/tech387" target="_blank" class="example-icon"><img
+            src="../../../assets/icons/facebook.svg" alt="facebook" height="25px" width="25px" /></a>
+      </div>
+      <div class="instagram">
+        <a href="https://www.instagram.com/tech387/?hl=en" target="_blank" class="example-icon"><img
+            src="../../../assets/icons/instagram.svg" alt="instagram" height="25px" width="25px" /></a>
+      </div>
+      <div class="linkedin">
+        <a href="https://www.linkedin.com/company/tech-387/?originalSubdomain=ba" target="_blank"
+          class="example-icon"><img src="../../../assets/icons/linkedin.svg" alt="linkedin" height="25px"
+            width="25px" /></a>
+      </div>
+    </div>
+    <div class="view">
+      <!-- Ovdje dole ce ici router umjesto hrefa -->
+      <a routerLink="" id="view-link">View Posts</a>
+    </div>
+  </mat-toolbar>
+
+  <mat-card class="create-post">
+    <h2>NEW POST</h2>
+    <form [formGroup]="form" (submit)="onSavePost()" div="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title:</mat-label>
+        <input matInput formControlName="title" placeholder="Enter your title here...">
+        <mat-error *ngIf="form.get('title').invalid">Please enter a title.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Content:</mat-label>
+        <input matInput formControlName="content" placeholder="Enter your content here...">
+        <mat-error *ngIf="form.get('content').invalid">Please enter some content.</mat-error>
+      </mat-form-field>
+      <div class="buttons">
+        <input type="file" #filePicker (change)="onImagePicked($event)">
+        <div class="imagePreviewDiv" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="form.value.title">
+        </div>
+        <button class="dugme" mat-raised-button type="button" (click)="filePicker.click()">Upload an image</button>
+        <button class="dugme" mat-raised-button type="submit">Save post</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
